@@ -1,0 +1,14 @@
+{
+  "status": "structural long-secant LI passed for every p>=.88",
+  "h": [
+    "0",
+    ".12"
+  ],
+  "a_minus_q_lower": ".18",
+  "a_upper": ".36",
+  "visited": 2085,
+  "leaves": 1043,
+  "LI_upper": -3.4704163615340007e-06,
+  "seconds": 0.17267489433288574,
+  "combination": "short secants use the existing rearrangement lemma; roots a>=.36 have zero credit because beta*h>=1, and require the binary inequality"
+}

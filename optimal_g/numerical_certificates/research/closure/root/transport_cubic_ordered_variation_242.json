@@ -1,0 +1,74 @@
+{
+  "status": "interval first-variation enclosure; not an optimum",
+  "reference": "research/closure/root/warped_cubic_ordered_reference_242.json",
+  "coefficient_certificate": "research/closure/root/warped_cubic_ordered_certificate_242.json",
+  "subdivisions": 2,
+  "cells": 2816,
+  "flow": {
+    "z0": "7835342428237777/10000000000000000",
+    "zend": "8624179577667147/10000000000000000",
+    "Zinitial": 0.0013593193729846398,
+    "Zterminal": [
+      0.02381596972977308,
+      0.023815969731908474
+    ],
+    "alpha_integral": [
+      0.2196475053409963,
+      0.21964750534189287
+    ]
+  },
+  "terminal_Zbar": 0.023816071295363575,
+  "terminal_bprime": -28.411028524267827,
+  "scalar_residual": [
+    -0.0001771180909457826,
+    -6.536143945012894e-05
+  ],
+  "scalar_adjoint_enclosure": [
+    -0.0666725951828653,
+    0.06632376440310851
+  ],
+  "scalar_direct_sensitivity": {
+    "status": "outward-rounded scalar first-variation enclosure; not stationarity",
+    "cells": 2816,
+    "Vterminal": [
+      -0.6766404135647744,
+      -0.6766377520324147
+    ],
+    "Zterminal": [
+      0.02381596972977308,
+      0.023815969731908474
+    ],
+    "log_flow_S": [
+      -28.411205642358773,
+      -28.41109388570728
+    ],
+    "terminal_bprime": "-90200096149886725383457832755544973961148150647080000000000000000/3174826848413480493056650113708687051915021364673293544891045161",
+    "terminal_Zbar": "3174826848413480493056650113708687051915021364673293544891045161/133306069210144832632409547462042250000000000000000000000000000000",
+    "scalar_residual": [
+      -0.0001771180909457826,
+      -6.536143945012894e-05
+    ],
+    "scalar_residual_width": 0.00011175665149565367,
+    "maximum_coarse_Vcell_width": 0.0009618647100096411
+  },
+  "flux_range": [
+    -16.89600176423961,
+    -0.7691049786885368
+  ],
+  "favorable_constant_flux": -8.832553371464073,
+  "flux_sup_residual": 8.06344839277554,
+  "energy_dual_residual_upper": 2.636305681804063,
+  "reference_violation_lower": -4.264600251824292e-06,
+  "completed_square_budget_upper": 1.4802932044502777,
+  "entropy_flux_absorption": {
+    "retained_entropy_density": "3",
+    "reference_density_lower": 3.243672209197911,
+    "favorable_constant_flux": -16.8499,
+    "defect_integral_upper": 2.5827808760992415e-06,
+    "remaining_rank_coercivity_lower": 0.9577553423013182,
+    "localization_budget_upper": 6.8474957378260945e-06,
+    "S_distance_upper": 0.0003176268213601752,
+    "J_upper": 7.1495249730194815e-06,
+    "rank_sup_distance_upper": 0.000874205528457566
+  }
+}

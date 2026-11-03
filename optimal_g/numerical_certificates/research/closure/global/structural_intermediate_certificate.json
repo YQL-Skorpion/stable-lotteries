@@ -1,0 +1,26 @@
+{
+  "status": "structural HC through .875 passed",
+  "p": [
+    "L",
+    ".65"
+  ],
+  "z": [
+    ".782",
+    ".875"
+  ],
+  "S": [
+    ".02271790",
+    ".023354"
+  ],
+  "head": ".2635",
+  "prefix": ".2918",
+  "contact_upper": ".36",
+  "low_endpoint_rank_upper": ".348541",
+  "low_endpoint_slack_upper": ".00024",
+  "free_slope_upper": "-.691",
+  "leaves": 6858129,
+  "visited": 13716257,
+  "HC_upper": -2.5149521354350665e-11,
+  "seconds": 76.11674904823303,
+  "hypotheses": "binary for ci>=0; global high concavity; high onset>=.782; stated low shape/primitive bounds; fixed selected cut r=a=b=.34854; fixed cap retained after Hermite join by the cap-extension lemma"
+}

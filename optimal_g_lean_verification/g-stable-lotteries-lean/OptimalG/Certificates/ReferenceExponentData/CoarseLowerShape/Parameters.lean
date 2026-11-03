@@ -1,0 +1,5 @@
+import OptimalG.Certificates.ReferenceExponentTolerance
+import OptimalG.Certificates.ReferenceCumulativeData.CoarseLowerShapeTime
+namespace OptimalG.Certificates.ReferenceExponentData.CoarseLowerShape
+def scale : ℕ := 1208925819614629174706176
+end OptimalG.Certificates.ReferenceExponentData.CoarseLowerShape

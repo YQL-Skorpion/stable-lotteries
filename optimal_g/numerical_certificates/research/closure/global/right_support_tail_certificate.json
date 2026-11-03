@@ -1,0 +1,27 @@
+{
+  "status": "verified right support-line full Hermite-tail comparison",
+  "p_range": [
+    ".38",
+    ".562330"
+  ],
+  "z_range": [
+    ".8495",
+    "1"
+  ],
+  "tau_range": [
+    ".3058",
+    ".36"
+  ],
+  "S_range": [
+    ".02271790",
+    ".023354"
+  ],
+  "fixed_anchor": "global/fixed_anchor_terminal_certificate.json",
+  "visited": 1036063,
+  "leaves": 518032,
+  "compare_boxes": 151692,
+  "direct_boxes": 424552,
+  "strict_cleared_compare_upper": -1.5200276471528865e-11,
+  "strict_direct_upper": -5.09983776736389e-09,
+  "seconds": 15.222423076629639
+}

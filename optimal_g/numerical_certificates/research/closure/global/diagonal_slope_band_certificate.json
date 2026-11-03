@@ -1,0 +1,26 @@
+{
+  "status": "verified conditional diagonal slope > -1",
+  "score_slack_band": ".022",
+  "domain": [
+    [
+      ".562325",
+      ".562330"
+    ],
+    [
+      ".0219728",
+      ".0266504"
+    ],
+    [
+      ".29",
+      ".35"
+    ],
+    [
+      ".285",
+      ".35"
+    ]
+  ],
+  "visited": 2239619,
+  "verified_boxes": 1115669,
+  "positive_numerator_lower_across_leaves": 1.8701082349359402e-12,
+  "negative_A_derivative_numerator_upper": "-2430693021557/1000000000000000"
+}

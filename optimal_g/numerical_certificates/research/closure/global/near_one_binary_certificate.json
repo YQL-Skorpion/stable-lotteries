@@ -1,0 +1,21 @@
+{
+  "status": "structural near-one binary passed for p>=.98",
+  "q_checked": [
+    ".25",
+    ".337"
+  ],
+  "last_cap": [
+    ".2918",
+    ".305"
+  ],
+  "contact_upper": ".35945",
+  "slope_gap": ".309",
+  "kappa_bound": "2.122+140*(S-.02271790)",
+  "visited": 1718619,
+  "leaves": 838476,
+  "infeasible_boxes_discarded": 20834,
+  "normalized_binary_margin_lower": 3.747543109167139e-09,
+  "q_below_025_margin": 1.0133984214721636,
+  "q_above_0337_margin": 0.0017832021799992768,
+  "seconds": 1.3597750663757324
+}

@@ -1,0 +1,46 @@
+{
+  "status": "verified structural Hermite-tail HC from coupled-contact bounds and binary",
+  "intermediate": false,
+  "p_range": [
+    ".65",
+    ".925"
+  ],
+  "z_range": [
+    "max(p,.875)",
+    "1"
+  ],
+  "q_range": [
+    "0",
+    "L"
+  ],
+  "L_range": [
+    ".562325",
+    ".562330"
+  ],
+  "S_range": [
+    ".02271790",
+    ".023354"
+  ],
+  "fixed_anchor_box": {
+    "anchor": ".8624",
+    "Y": [
+      ".08793",
+      ".08840"
+    ],
+    "H": [
+      "-.3589",
+      "-.3514"
+    ]
+  },
+  "true_join_range": [
+    ".8495",
+    ".875"
+  ],
+  "coupled_contact_certificate": "global/fixed_anchor_terminal_certificate.json",
+  "visited": 1110293,
+  "leaves": 555147,
+  "binary_face_boxes": 16568,
+  "strict_direct_HC_upper": -1.9049662958181553e-09,
+  "completion": "q>=L follows from high concavity",
+  "seconds": 4.1088707447052
+}

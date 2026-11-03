@@ -1,0 +1,29 @@
+{
+  "status": "verified structural HC through z=.875 for p>=.65",
+  "p_range": [
+    ".65",
+    ".875"
+  ],
+  "z_range": [
+    "p",
+    ".875"
+  ],
+  "q_range": [
+    "0",
+    "L"
+  ],
+  "L_range": [
+    ".562325",
+    ".562330"
+  ],
+  "S_range": [
+    ".02271790",
+    ".023354"
+  ],
+  "cut_parameters": "computed interval-wise from each scalar S box",
+  "visited": 801631,
+  "leaves": 400816,
+  "strict_HC_upper": -3.775656870486087e-09,
+  "completion": "q>=L follows from high concavity; applies after the true join using cap preservation",
+  "seconds": 1.8377559185028076
+}

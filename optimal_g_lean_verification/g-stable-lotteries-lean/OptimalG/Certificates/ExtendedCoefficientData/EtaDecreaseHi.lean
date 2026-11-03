@@ -1,0 +1,48 @@
+import OptimalG.Certificates.DenseBernstein
+import OptimalG.Certificates.ExtendedScalarExpressions
+
+/-! An exact endpoint polynomial sign for C.4. -/
+namespace OptimalG.Certificates.ExtendedCoefficientData.EtaDecreaseHi
+open Set
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+def numeratorPolynomial : RationalPolynomial3 := [[[0, 0, (9/100), 0, (-9/100)], [(-9/50), (18/25), (-9/25)], [(-9/25)]], [[(1/4), -1, (24/25), (-16/25), (1/4)], [(34/25), (-68/25), 1], [1]], [[-1, (5/2), (-107/50), 1], [-3, 2]], [[(3/2), -1], [2]], [[-1]]]
+def numeratorReduced : RationalPolynomial3 := numeratorPolynomial.add [[[(-7968592968260313874793/16000000000000000000000000)]]]
+def numeratorBox : Fin 3→RatInterval := ![⟨(22493/40000), (56233/100000)⟩, ⟨(227179/10000000), (11677/500000)⟩, ⟨(9/25), (56233/100000)⟩]
+def numeratorScale : ℚ := 80000000000000000000000000
+def numeratorCertificate : DenseBernstein3 := [[[43733887186015285126035, 310788569845180142304140, 505883105374461962516210, 273657272588502852289790, 41610270311425796608950], [85606033912342569502070, 613806557019110135308280, 1000046393765199453572420, 539739697384555206559580, 81456667602563418107900], [41878695957604344376035, 303044184099038233004140, 494202583778399851056210, 266108621721160594269790, 39852946522414681498950]], [[174929145947431575154140, 1243133693064251722356560, 2023497515141540845268840, 1094598223854740276145980, 166431105170208270964141], [342411301785342222658280, 2455184955194601857273120, 4000115641642213791193680, 2158897002791365805323960, 325806713238789034514282], [167508352924868171504140, 1212156050478180230916560, 1976775309022418089924840, 1064403567284455625177980, 159401805155538287550141]], [[262384114166321640616210, 1864669657763365244212840, 3035193909375424448885260, 1641851033280318541765874, 249631692893183477187397], [513597700763600225972420, 3682715518758608323117680, 6000068554740486792994520, 3238252818568107148863748, 488680132605120014434794], [251252882470488797356210, 1818203044488083926904840, 2965110420604323616109260, 1596558968780629455097874, 239087735585146749247397]], [[174916339234399057632140, 1243092515714651312704560, 2023427694824004310276840, 1094536485350379039784968, 166411151521432665976171], [342385631820522797416280, 2455102400009762510801120, 3999975759614990299525680, 2158773418300240509945936, 325766795904101286596342], [167495489996779831784140, 1212114673937735566096560, 1976705249254922541248840, 1064341722592485838160968, 159381841793324712620171]], [[43727483829493706994035, 310767981170357648344140, 505848195215658743844210, 273626403336297921675284, 41600293487031663093965], [85593198929922224500070, 613765279426645909248280, 999976452751517843552420, 539677905138943959446568, 81436708935206888467930], [41872264493554861506035, 303023495828793636904140, 494167553894617163708210, 266077699375151413771284, 39842964841301569373965]]]
+noncomputable def numerator (lam S p : ℝ) : ℝ := numeratorPolynomial.eval lam S p
+
+theorem numeratorChecked : numeratorCertificate.scaledBoxCheck numeratorScale numeratorReduced numeratorBox=true := by
+  decide +kernel
+
+theorem numerator_pos {lam S p : ℝ}
+    (hlam : lam∈Icc (22493/40000) (56233/100000))
+    (hS : S∈Icc (227179/10000000) (11677/500000))
+    (hp : p∈Icc (9/25) (56233/100000))
+    : 0<numerator lam S p := by
+  have hx : ∀ i,(numeratorBox i).Contains (![lam, S, p] i) := by
+    intro i
+    fin_cases i
+    · simpa [numeratorBox,RatInterval.Contains] using hlam
+    · simpa [numeratorBox,RatInterval.Contains] using hS
+    · simpa [numeratorBox,RatInterval.Contains] using hp
+  have hh := DenseBernstein3.scaledBoxCheck_sound numeratorChecked ![lam, S, p] hx
+  have he : numeratorReduced.eval lam S p=numerator lam S p-(7968592968260313874793/16000000000000000000000000) := by
+    norm_num [numeratorReduced,RationalPolynomial3.eval_add,numerator,RationalPolynomial3.eval,RationalPolynomial2.eval,RationalPolynomial.eval] <;> ring
+  change 0≤numeratorReduced.eval lam S p at hh
+  rw [he] at hh
+  have hm : (0:ℝ)<(7968592968260313874793/16000000000000000000000000) := by norm_num
+  linarith only [hh,hm]
+
+ theorem expression_identity (lam S p : ℝ) :
+    numerator lam S p=ExtendedScalarExpressions.etaDecrease lam S p (9/25) := by
+  norm_num [numerator,numeratorPolynomial,RationalPolynomial3.eval,RationalPolynomial2.eval,RationalPolynomial.eval,ExtendedScalarExpressions.etaDecrease,
+    ExtendedScalarExpressions.denominator,ExtendedScalarExpressions.etaNumerator,
+    ExtendedScalarExpressions.betaNumerator,ExtendedScalarExpressions.denominatorDerivative,
+    ExtendedScalarExpressions.etaNumeratorDerivative,SmallMassExpressions.initial,
+    headInitial,Variational.cap,Variational.capScore,Variational.quadratic]
+  <;> ring
+
+end OptimalG.Certificates.ExtendedCoefficientData.EtaDecreaseHi

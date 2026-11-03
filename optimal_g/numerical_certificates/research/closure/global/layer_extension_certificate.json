@@ -1,0 +1,34 @@
+{
+  "status": "verified exact rational necessary-family constants",
+  "layers": [
+    ".25",
+    ".36"
+  ],
+  "independent_roots": [
+    ".285",
+    ".38"
+  ],
+  "rho": "149/50",
+  "D_lower": "519/10000",
+  "D_Bernstein": [
+    "6502899/125000000",
+    "686669991/12500000000",
+    "16716551393/300000000000",
+    "5505340809/100000000000"
+  ],
+  "alpha_upper": "4.53",
+  "HP_upper": "6.19",
+  "integrated_P_loss_upper": "495065606523502608534999273082407282139/632262400000000000000000000000000000000",
+  "phase1_terminal_gain": ".096",
+  "phase2_terminal_gain": ".216",
+  "opposite_binary_margin_lower": "71817905253/5000000000000",
+  "active_B_lower": ".0332",
+  "nearactive_B_lower": ".0289",
+  "nearactive_A_lower": ".0218",
+  "common_KKT_score_floor": ".02",
+  "cA_lower": "290486061/20000000000",
+  "original_scalar_lower": "549/25000",
+  "active_C_numerator_lower": "3025466839024327/10000000000000000000",
+  "cleared_ratio_margin_lower": "17913608425262946093427/64000000000000000000000000",
+  "EL_upper": "-5402163/2000000000"
+}

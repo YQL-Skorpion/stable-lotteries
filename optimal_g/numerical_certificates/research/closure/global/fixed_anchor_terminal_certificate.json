@@ -1,0 +1,67 @@
+{
+  "status": "verified fixed-anchor bounds for coupled rational terminal contact",
+  "anchor": ".8624",
+  "domain": [
+    [
+      ".562325",
+      ".562330"
+    ],
+    [
+      ".02271790",
+      ".023354"
+    ],
+    [
+      ".2635",
+      ".28"
+    ]
+  ],
+  "additional_constraint": "zstar<=.875",
+  "visited": 31664,
+  "leaves": 15487,
+  "excluded_boxes": 377,
+  "certified_targets": {
+    "Y_anchor": [
+      ".08793",
+      ".08840"
+    ],
+    "H_anchor": [
+      "-.3589",
+      "-.3514"
+    ],
+    "E_join": [
+      "0",
+      ".00290"
+    ],
+    "v": [
+      "6.18",
+      "6.42"
+    ],
+    "g": [
+      "10.77",
+      "12.73"
+    ]
+  },
+  "actual_enclosure": {
+    "Y_anchor": [
+      0.08793000789293774,
+      0.08839998365372624
+    ],
+    "H_anchor": [
+      -0.3588998743281455,
+      -0.35140002345439336
+    ],
+    "E_join": [
+      0.0012734198831365151,
+      0.002886898294811928
+    ],
+    "v": [
+      6.187153115828068,
+      6.409482582454224
+    ],
+    "g": [
+      10.77010952705974,
+      12.716303462158393
+    ]
+  },
+  "scope": "anchor values may be polynomial extrapolations before the actual join"
+}

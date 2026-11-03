@@ -1,0 +1,18 @@
+{
+  "status": "structural central binary passed",
+  "p": [
+    ".65",
+    ".775"
+  ],
+  "q": [
+    "0",
+    ".18"
+  ],
+  "visited": 120791,
+  "leaves": 60396,
+  "q0_factor_boxes": 1779,
+  "binary_upper_on_strict_boxes": -3.563959981304267e-11,
+  "seconds": 0.3402271270751953,
+  "q0": "F(1-p)<=B_S(1-p), matched head below B; F(p)=Q(p)-S",
+  "remaining_q": "derivative at q=.18 is negative and nonincreasing thereafter; separate exact constant check"
+}

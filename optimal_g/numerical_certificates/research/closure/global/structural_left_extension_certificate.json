@@ -1,0 +1,70 @@
+{
+  "status": "structural left dual coefficient certificate passed",
+  "head": ".2635",
+  "selected_boundary": ".2635",
+  "onset_upper_from_r027_cut": 0.788066161022101,
+  "onset_lower": ".782",
+  "high_slope_excess": ".26",
+  "parts": [
+    {
+      "kind": "direct",
+      "domain": [
+        [
+          ".562325",
+          ".562330"
+        ],
+        [
+          ".02271790",
+          ".023354"
+        ],
+        [
+          ".04",
+          ".14"
+        ]
+      ],
+      "visited": 75707,
+      "leaves": 37854,
+      "minimum_positive_margin": 4.738092074241251e-08
+    },
+    {
+      "kind": "derivative_head",
+      "domain": [
+        [
+          ".562325",
+          ".562330"
+        ],
+        [
+          ".02271790",
+          ".023354"
+        ],
+        [
+          ".14",
+          ".20"
+        ]
+      ],
+      "visited": 5777,
+      "leaves": 2889,
+      "minimum_positive_margin": 9.687500382993262e-06
+    },
+    {
+      "kind": "derivative_low",
+      "domain": [
+        [
+          ".562325",
+          ".562330"
+        ],
+        [
+          ".02271790",
+          ".023354"
+        ],
+        [
+          ".20",
+          ".2635"
+        ]
+      ],
+      "visited": 171439,
+      "leaves": 85720,
+      "minimum_positive_margin": 7.31631288886092e-09
+    }
+  ]
+}

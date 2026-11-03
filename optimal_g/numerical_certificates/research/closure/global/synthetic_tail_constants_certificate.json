@@ -1,0 +1,19 @@
+{
+  "status": "exact synthetic right-tail constants passed",
+  "p": [
+    ".36",
+    ".38"
+  ],
+  "tau": [
+    ".3058",
+    ".36"
+  ],
+  "C_upper": ".81",
+  "alpha_upper": "3",
+  "visited": 515,
+  "leaves": 258,
+  "C_cleared_margin_lower": 4.20586715375e-05,
+  "alpha_cleared_margin_lower": 0.0049200638928125,
+  "join_gap_derivative_lower": 0.42451,
+  "terminal_gap_derivative_lower": 2.46301
+}

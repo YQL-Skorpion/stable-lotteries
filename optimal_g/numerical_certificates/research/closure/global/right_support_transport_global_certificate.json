@@ -1,0 +1,25 @@
+{
+  "status": "verified right support-line selected-high comparison",
+  "local": false,
+  "p_range": [
+    ".38",
+    ".562330"
+  ],
+  "z_range": [
+    ".782",
+    ".875"
+  ],
+  "tau_range": [
+    ".3058",
+    ".36"
+  ],
+  "S_range": [
+    ".02271790",
+    ".023354"
+  ],
+  "E_upper": ".00290",
+  "visited": 5635217,
+  "leaves": 2817609,
+  "strict_cleared_upper": -5.9404215487640624e-12,
+  "seconds": 39.356801986694336
+}

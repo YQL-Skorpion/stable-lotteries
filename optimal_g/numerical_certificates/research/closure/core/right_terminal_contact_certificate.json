@@ -1,0 +1,77 @@
+{
+  "q endpoint .2761 positive": {
+    "leaves": 1,
+    "strict_lower": "47864615102213/5589666240000000000",
+    "decimal_lower": 8.563054223111003e-06
+  },
+  "q endpoint .2764 negative": {
+    "leaves": 1,
+    "strict_lower": "15413101042517/930839040000000000",
+    "decimal_lower": 1.6558288146699348e-05
+  },
+  "terminal Y above .0829": {
+    "leaves": 1,
+    "strict_lower": "989898061/10471939200000",
+    "decimal_lower": 9.452862952069088e-05
+  },
+  "terminal Y below .0840": {
+    "leaves": 1,
+    "strict_lower": "5062861097/41922496800000",
+    "decimal_lower": 0.00012076716520853787
+  },
+  "terminal barrier slope below -.396": {
+    "leaves": 1,
+    "strict_lower": "36417708055727/59933449487700000",
+    "decimal_lower": 0.0006076357754645996
+  },
+  "synthetic contact above .30782": {
+    "leaves": 1,
+    "strict_lower": "421618629/119778288100000",
+    "decimal_lower": 3.5199921094881635e-06
+  },
+  "synthetic contact below .30865": {
+    "leaves": 1,
+    "strict_lower": "482146297/76474371600000",
+    "decimal_lower": 6.304678115197484e-06
+  },
+  "synthetic rational slope magnitude below .1": {
+    "leaves": 1,
+    "strict_lower": "542303069083/26435278402830",
+    "decimal_lower": 0.020514369503479273
+  },
+  "corner determinant positive": {
+    "leaves": 4,
+    "strict_lower": "2344351007/320000000000",
+    "decimal_lower": 0.007326096896875
+  },
+  "corner support slope above .1": {
+    "leaves": 1,
+    "strict_lower": "81796822657/814352969680",
+    "decimal_lower": 0.100443942249197
+  },
+  "corner support slope below 1": {
+    "leaves": 8,
+    "strict_lower": "65540599554/1037672518555",
+    "decimal_lower": 0.0631611595971221
+  },
+  "corner alpha positive": {
+    "leaves": 1,
+    "strict_lower": "40987339975/30538236363",
+    "decimal_lower": 1.3421646059646093
+  },
+  "central increment K positive": {
+    "leaves": 2,
+    "strict_lower": "15167/800000",
+    "decimal_lower": 0.01895875
+  },
+  "all synthetic cap slopes above -.388": {
+    "leaves": 5875,
+    "strict_lower": "1812200552926703/6429112274733067860000",
+    "decimal_lower": 2.818741492583351e-07
+  },
+  "score_primitive_monotonicity": {
+    "J_lower": "631923/5000000",
+    "cA_lower": "498743/20000000",
+    "conditions": "R>=.085, K<=.06, Bsynthetic>=.18, Asynthetic<=.28; checked below"
+  }
+}

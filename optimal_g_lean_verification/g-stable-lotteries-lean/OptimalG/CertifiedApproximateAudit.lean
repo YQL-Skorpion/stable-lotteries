@@ -1,0 +1,10 @@
+import OptimalG.CertifiedApproximateOptimality
+
+#print axioms OptimalG.certifiedActivation_admissible
+#print axioms OptimalG.certifiedActivation_stable_exists
+#print axioms OptimalG.certified_upper_212466
+#print axioms OptimalG.certified_witness_above_212465
+#print axioms OptimalG.certified_metric_witness_above_212465
+#print axioms OptimalG.certified_optimalDistortion_bounds
+#print axioms OptimalG.certifiedActivation_distortion_bounds
+#print axioms OptimalG.rational_bracket_width

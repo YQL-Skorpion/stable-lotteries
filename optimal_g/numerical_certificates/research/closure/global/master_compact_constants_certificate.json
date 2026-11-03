@@ -1,0 +1,22 @@
+{
+  "status": "exact current compact-class ancillary constants passed",
+  "low_interval": [
+    ".28",
+    ".385"
+  ],
+  "root_interval": [
+    ".285",
+    ".38"
+  ],
+  "layers": [
+    ".25",
+    ".36"
+  ],
+  "opposite_binary_margin_lower": 0.01446010831265338,
+  "strict_lower_scalar_margin": 3.261638142636198e-08,
+  "binary_above_root_budget_margin": 0.019816467011455747,
+  "binary_scalar_derivative_absolute_upper": 0.6949732945294675,
+  "area_multiplier_upper": "-1.073",
+  "coarse_two_rank_Lipschitz_upper": 143.628588,
+  "safe_stated_Lipschitz_constant": 200
+}

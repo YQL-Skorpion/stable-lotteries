@@ -1,0 +1,16 @@
+{
+  "status": "exact rational retained endpoint bounds passed",
+  "budget_upper": "855937/125000000000",
+  "terminal_Zbar_upper": 0.024073370354129375,
+  "initial_high_deficit_upper": 1.711874e-07,
+  "high_departure_by_078_deficit_lower": 4.996348934969668e-07,
+  "terminal_quantile_displacement_upper": 4.0638440812353856e-07,
+  "remaining_low_slack_upper": 8.688097276676407e-08,
+  "raw_low_score_slack_upper_on_rc_to_036": ".000418",
+  "low_score_slack_upper": ".00024",
+  "central_contact_upper": 0.35944917068604637,
+  "extended_alpha_lower": 2.3038962540028844,
+  "extended_high_slope_upper": "-1.26",
+  "high_onset_lower_after_bootstrap": ".782",
+  "departure_by_0782_deficit_lower": 3.060071355007382e-07
+}

@@ -1,0 +1,41 @@
+import OptimalG.Certificates.TransportHessianData.CoarseLowerShapeFlow.Assembly
+namespace OptimalG.Certificates.TransportHessianData.CoarseLowerShapeFlow
+set_option maxRecDepth 1000000
+set_option maxHeartbeats 0
+def scalarMass : ℚ := (cells.map (fun c => (c.zHi-c.zLo)*c.scalarLower)).sum
+def rankMass : ℚ := (cells.map (fun c => (c.zHi-c.zLo)*c.rankPenalty)).sum
+def rankWidth : ℚ := (6970801595539109/20000000000000000)-(2950935005377889/10000000000000000)
+theorem scalarMass_eq : scalarMass=(-2340039820245281261964932157752933761279431519963756858457748424449538748805958046123082945226297283045190691308665807208897435492630736637477539024189973408499833493270939721522592234114215384832268081052149388227450448776097769131939181488442210682868422013699049256629310415573958086129607460660191120262645846502712286646858211436711353343335819512822506692050890921431739029061287253276078785029610807948921954508860666770926061457322347418918365073285837101950137525901624596756876091879875510998354276165614869467844359706824788669099312186086609035984059707337318361957571404944956260516017817283602799897599250699407893159933635484717079510270199753611776823990264105975243343339563333/4038093822151455963857790858850185794020884015136244243220561056235124329912499705696245364646847676486276973743503072194695986639682784811505333419691746764594970146801342789143200530979305932088811942311717404700477962638512498620991778220383172260459580588604254974837791050463657282495164473890851887669412294101023805066596483906576570164497825722908889461482010402540519124785564162376794433558824342372935661471914262830153111656173379482509686434827394073958126846212031799755692109137892267446412115119146367125647435323391637401450930626775870489336145076001150003262441784820582702297878054063523608642573842260538238383938351109366058720143190733000394177644800000000000000000000) := by
+  simp only [scalarMass,cells,batches,List.map_flatten,List.sum_flatten,List.map_cons,List.map_nil,Batch0000.scalarMass_eq,Batch0001.scalarMass_eq,Batch0002.scalarMass_eq,Batch0003.scalarMass_eq,Batch0004.scalarMass_eq,Batch0005.scalarMass_eq,Batch0006.scalarMass_eq,Batch0007.scalarMass_eq,Batch0008.scalarMass_eq,Batch0009.scalarMass_eq,Batch0010.scalarMass_eq,Batch0011.scalarMass_eq,Batch0012.scalarMass_eq,Batch0013.scalarMass_eq,Batch0014.scalarMass_eq,Batch0015.scalarMass_eq,Batch0016.scalarMass_eq,Batch0017.scalarMass_eq,Batch0018.scalarMass_eq,Batch0019.scalarMass_eq,Batch0020.scalarMass_eq,Batch0021.scalarMass_eq,Batch0022.scalarMass_eq,Batch0023.scalarMass_eq,Batch0024.scalarMass_eq,Batch0025.scalarMass_eq,Batch0026.scalarMass_eq,Batch0027.scalarMass_eq,Batch0028.scalarMass_eq,Batch0029.scalarMass_eq,Batch0030.scalarMass_eq,Batch0031.scalarMass_eq,Batch0032.scalarMass_eq,Batch0033.scalarMass_eq,Batch0034.scalarMass_eq,Batch0035.scalarMass_eq,Batch0036.scalarMass_eq,Batch0037.scalarMass_eq,Batch0038.scalarMass_eq,Batch0039.scalarMass_eq,Batch0040.scalarMass_eq,Batch0041.scalarMass_eq,Batch0042.scalarMass_eq,Batch0043.scalarMass_eq]
+  norm_num
+theorem rankMass_eq : rankMass=(26550657247247596183571417670231426303557481353051515014020876095070183629311798599971577431227378076964585630659258298531182564478700233140441273993891569214567395455970125463432806526991633902179864362562853829764774800387009441720244784904864085451701275286892752826884192862626437577799633583287158604429268912769857987717358614372543235941867349797356685972824420660696788349429331371342379260352677292604610415990425837530886509764014252950528127435747690180306448588948891710673126790473383626780734607722756002781982528350756771734700040193951510076427496755123661182500950460977961144836404330747682442036067009903399148379400116681131739282414339501015793740759/1228638438727002611079145464316603099542993565276086872645939718180436398713891058249088079758703630581952222161528955622710581558347425850259143504496945544183059164172561573600763077434966815959279416142833792595645613335033737720427263242904002922777163538136988557670637852023577786205300380651913375780583310132725234824178207015826780893147826419110312856327403951309723457223248230817273012765159337877124480358964885693937149113791297243680531976215562962558228848077797723306831182922009797631216418504202303782037622334698210386670440535925778587484667175700238647552023039870515112226423712879293719026360063138466569394949711411622369251200000000000000000000) := by
+  simp only [rankMass,cells,batches,List.map_flatten,List.sum_flatten,List.map_cons,List.map_nil,Batch0000.rankMass_eq,Batch0001.rankMass_eq,Batch0002.rankMass_eq,Batch0003.rankMass_eq,Batch0004.rankMass_eq,Batch0005.rankMass_eq,Batch0006.rankMass_eq,Batch0007.rankMass_eq,Batch0008.rankMass_eq,Batch0009.rankMass_eq,Batch0010.rankMass_eq,Batch0011.rankMass_eq,Batch0012.rankMass_eq,Batch0013.rankMass_eq,Batch0014.rankMass_eq,Batch0015.rankMass_eq,Batch0016.rankMass_eq,Batch0017.rankMass_eq,Batch0018.rankMass_eq,Batch0019.rankMass_eq,Batch0020.rankMass_eq,Batch0021.rankMass_eq,Batch0022.rankMass_eq,Batch0023.rankMass_eq,Batch0024.rankMass_eq,Batch0025.rankMass_eq,Batch0026.rankMass_eq,Batch0027.rankMass_eq,Batch0028.rankMass_eq,Batch0029.rankMass_eq,Batch0030.rankMass_eq,Batch0031.rankMass_eq,Batch0032.rankMass_eq,Batch0033.rankMass_eq,Batch0034.rankMass_eq,Batch0035.rankMass_eq,Batch0036.rankMass_eq,Batch0037.rankMass_eq,Batch0038.rankMass_eq,Batch0039.rankMass_eq,Batch0040.rankMass_eq,Batch0041.rankMass_eq,Batch0042.rankMass_eq,Batch0043.rankMass_eq]
+  norm_num
+theorem scalar_margin_checked : (60:ℚ)≤650+scalarMass := by
+  rw [scalarMass_eq]
+  decide +kernel
+theorem rank_margin_checked : ((3/10):ℚ)≤8/3-2*rankWidth*rankMass := by
+  rw [rankMass_eq]
+  decide +kernel
+noncomputable def scalarField : ℝ→ℝ := Transport.hessianStepField Transport.HessianCell.scalarLower cells
+noncomputable def rankField : ℝ→ℝ := Transport.hessianStepField Transport.HessianCell.rankPenalty cells
+theorem scalar_integrable : IntervalIntegrable scalarField MeasureTheory.volume (timeStart:ℝ) timeFinish :=
+  Transport.hessianStepField_intervalIntegrable time_cover_checked _
+theorem rank_integrable : IntervalIntegrable rankField MeasureTheory.volume (timeStart:ℝ) timeFinish :=
+  Transport.hessianStepField_intervalIntegrable time_cover_checked _
+theorem rank_nonnegative (z : ℝ) : 0≤rankField z := by
+  apply Transport.hessianStepField_nonneg
+  intro c hc
+  exact of_decide_eq_true (List.all_eq_true.mp rank_nonnegative_checked c hc)
+theorem scalar_integral : (∫ z in (timeStart:ℝ)..timeFinish,scalarField z)=(scalarMass:ℝ) :=
+  Transport.scalarLower_integral time_cover_checked
+theorem rank_integral : (∫ z in (timeStart:ℝ)..timeFinish,rankField z)=(rankMass:ℝ) :=
+  Transport.rankPenalty_integral time_cover_checked
+theorem scalar_margin_integral : (60:ℝ)≤650+(∫ z in (timeStart:ℝ)..timeFinish,scalarField z) := by
+  rw [scalar_integral]
+  exact_mod_cast scalar_margin_checked
+theorem rank_margin_integral : ((3/10):ℝ)≤8/3-2*(rankWidth:ℝ)*(∫ z in (timeStart:ℝ)..timeFinish,rankField z) := by
+  rw [rank_integral]
+  have h := (Rat.cast_le (K := ℝ)).mpr rank_margin_checked
+  simpa only [Rat.cast_div, Rat.cast_sub, Rat.cast_mul, Rat.cast_ofNat] using h
+end OptimalG.Certificates.TransportHessianData.CoarseLowerShapeFlow

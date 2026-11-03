@@ -1,0 +1,37 @@
+import OptimalG.Certificates.DenseBernstein
+
+namespace OptimalG.Certificates.StaticBinaryData.Central.Leaf014
+open Set
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+set_option Elab.async false
+
+def numeratorPolynomial : RationalPolynomial3 := [[[(108872756612627768538185284179973/8404586683742000000000000000000000)], [(-1936100805801358073341014781/84045866837420000000000000000)]], [[(1936100805801358073341014781/84045866837420000000000000000)], [(975228323892699848732156017231354687/2402550241951025449696500000000000000)], [(108293424099618781603825118132872771/316535994377047602997513875000000000)]], [[(-975228323892699848732156017231354687/2402550241951025449696500000000000000)], [(-266561421288142583102582055632872771/316535994377047602997513875000000000)]], [[(1/2)]]]
+def numeratorReduced : RationalPolynomial3 := numeratorPolynomial.add [[[(-460651560453213004062208796073271194135329/595832460003854311524732000000000000000000000)]]]
+def numeratorBox : Fin 3→RatInterval := ![⟨(119/160), (243/320)⟩, ⟨(9/200), (9/160)⟩, ⟨0, 1⟩]
+def numeratorScale : ℚ := 81033214560524186367363552000000000000000000000
+def numeratorCertificate : DenseBernstein3 := [[[209607196976708528598101774775307503114928244], [269646208411104933560863995257065483918160488], [62648612221636968552460396265964882402404744]], [[896706030063858768093581499075809786769477232], [1333085021656188421418381510637644114318155214], [444262617500001776102081475380509799186514232]], [[1177881336266095957316859153139644860774966607], [1883625726216726830748429991124120506376313339], [713682839404253428217039238269205884079501732]], [[490937061769950135596280558660919920870417619], [820496030153652178440714735387096563476318613], [332223392716893038442319288976438311045392244]]]
+noncomputable def numerator (p q u : ℝ) : ℝ := numeratorPolynomial.eval p q u
+
+theorem numeratorChecked : numeratorCertificate.scaledBoxCheck numeratorScale numeratorReduced numeratorBox=true := by
+  decide +kernel
+
+theorem numerator_pos {p q u : ℝ}
+    (hp : p∈Icc (119/160) (243/320))
+    (hq : q∈Icc (9/200) (9/160))
+    (hu : u∈Icc 0 1)
+    : 0<numerator p q u := by
+  have hx : ∀ i,(numeratorBox i).Contains (![p, q, u] i) := by
+    intro i
+    fin_cases i
+    · simpa [numeratorBox,RatInterval.Contains] using hp
+    · simpa [numeratorBox,RatInterval.Contains] using hq
+    · simpa [numeratorBox,RatInterval.Contains] using hu
+  have hh := DenseBernstein3.scaledBoxCheck_sound numeratorChecked ![p, q, u] hx
+  have he : numeratorReduced.eval p q u=numerator p q u-(460651560453213004062208796073271194135329/595832460003854311524732000000000000000000000) := by
+    norm_num [numeratorReduced,RationalPolynomial3.eval_add,numerator,RationalPolynomial3.eval,RationalPolynomial2.eval,RationalPolynomial.eval] <;> ring
+  change 0≤numeratorReduced.eval p q u at hh
+  rw [he] at hh
+  have hm : (0:ℝ)<(460651560453213004062208796073271194135329/595832460003854311524732000000000000000000000) := by norm_num
+  linarith only [hh,hm]
+end OptimalG.Certificates.StaticBinaryData.Central.Leaf014

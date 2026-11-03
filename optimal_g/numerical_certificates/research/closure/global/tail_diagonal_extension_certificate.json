@@ -1,0 +1,26 @@
+{
+  "status": "verified conditional diagonal slope > -.978",
+  "ceiling_slack_upper": ".00024",
+  "domain": [
+    [
+      ".562325",
+      ".562330"
+    ],
+    [
+      ".02271790",
+      ".023354"
+    ],
+    [
+      ".34854007977695545",
+      ".36"
+    ],
+    [
+      ".2918",
+      ".36"
+    ]
+  ],
+  "visited": 433051,
+  "verified_boxes": 216501,
+  "positive_numerator_lower_across_leaves": 4.69432912680867e-12,
+  "negative_A_derivative_numerator_upper": -0.005935390963080866
+}

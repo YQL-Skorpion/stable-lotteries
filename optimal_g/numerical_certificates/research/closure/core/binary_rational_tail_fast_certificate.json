@@ -1,0 +1,21 @@
+{
+  "status": "rational-tail curvature interval certificate passed",
+  "arithmetic": "outward nextafter after each operation; exact rational decimal inputs enclosed; outward sqrt; first-order interval mean-value intersection",
+  "L": [
+    ".562325",
+    ".562330"
+  ],
+  "S": [
+    ".02271790",
+    ".023354"
+  ],
+  "q_contact": [
+    ".2635",
+    ".2764"
+  ],
+  "q_upper": ".2918",
+  "leaves": 30277,
+  "visited": 60553,
+  "curvature_gap_lower": 6.848838341906581e-07,
+  "seconds": 0.8286700248718262
+}

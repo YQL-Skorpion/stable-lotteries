@@ -1,0 +1,1604 @@
+{
+  "schema_version": 1,
+  "path_base": "repository_or_package_root",
+  "created_date": "2026-10-08",
+  "current_domains": {
+    "low_variable": [
+      ".28",
+      ".385"
+    ],
+    "layers": [
+      ".25",
+      ".36"
+    ],
+    "independent_roots": [
+      ".285",
+      ".38"
+    ],
+    "high_flow_and_root_budgets": [
+      ".775",
+      ".875"
+    ],
+    "terminal_binary_high": [
+      ".84",
+      ".875"
+    ],
+    "terminal_binary_low": [
+      ".26",
+      ".28"
+    ]
+  },
+  "runtime": {
+    "python": "Python 3.10 or later",
+    "packages": [
+      "numpy"
+    ],
+    "notes": [
+      "No SciPy optimizer is used by the accepted replay commands.",
+      "Optional diagnostic jet checks in flow_scalar_sensitivity.py use SymPy but are not part of this replay.",
+      "Interval checks assume ordinary IEEE-754 binary64 with NumPy nextafter; each arithmetic operation is enclosed outward."
+    ]
+  },
+  "groups": {
+    "foundational": "Universal rational bounds, current normal form, Slater, compact constants, terminal curvature",
+    "localization": "Exact ordered-242 reference coefficients and absorbed first variation",
+    "lower_endpoint": "Sharp selected-family infeasibility at L=.56232844",
+    "selected_upper": "Strict selected-family feasible trial at L=.56232847",
+    "regularity": "Contact, diagonal invariant bands, retained slack and support constants",
+    "binary": "Complete binary and coupled contact/Hermite construction",
+    "structural_upper": "All remaining paired-root sufficient inequalities"
+  },
+  "replay_policy": {
+    "execution": "serial separate Python subprocesses; never import checker modules into the runner",
+    "group_dependencies": "Group-only runs use the supplied prerequisite certificate files. Add --with-dependencies to replay their certificate generators too.",
+    "outputs": "Replay overwrites declared result files; imported exact helpers can also refresh auxiliary result JSON. Logs are retained separately.",
+    "hashes": "Archival hashes, not expected timing-dependent output equality. Refresh deliberately after final proof edits with --refresh-hashes.",
+    "proof_scope": "Arithmetic replay does not replace the companion analytic hypotheses or prove that a numerical reference is optimal.",
+    "dependency_meaning": "depends_on records certificate-generator replay dependencies. Python module imports and certificate/data inputs are listed separately. The analytic order and conditional hypotheses are in the definitive proof, not encoded as a complete theorem dependency DAG."
+  },
+  "verification_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "arithmetic": "Fraction and outward-rounded binary64 interval operations"
+  },
+  "title": "Embedded numerical data and verification for the exact g-stable optimum",
+  "certificates": [
+    {
+      "id": "universal_lp",
+      "group": "foundational",
+      "title": "Universal exact-rational slack and primitive bounds",
+      "argv": [
+        "research/closure/lower/verify_global_constants.py"
+      ],
+      "inputs": [
+        "research/closure/lower/localization200.json",
+        "research/closure/lower/certified_base_labels.json",
+        "research/closure/lower/full_central_certificate.json",
+        "research/closure/lower/uniform_envelope_certificates.json"
+      ],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "Verification only; do not use --pack, which regenerates rank labels using an optimizer.",
+      "module_dependencies": [
+        "research/closure/lower/exact_dual.py"
+      ]
+    },
+    {
+      "id": "weighted_slater",
+      "group": "foundational",
+      "title": "Weighted Slater at the actual low endpoint .385",
+      "argv": [
+        "research/closure/root/verify_weighted_slater.py",
+        "--ell",
+        ".28",
+        "--d",
+        ".385"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "The master specifies current d=.385; the old prose default d=.36 is not used.",
+      "module_dependencies": []
+    },
+    {
+      "id": "expanded_normal_form",
+      "group": "foundational",
+      "title": "Current independent-root relocation and signed-score constants",
+      "argv": [
+        "research/closure/global/verify_layer_extension.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/layer_extension_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "compact_constants",
+      "group": "foundational",
+      "title": "Current compact-class, transfer, and regularity constants",
+      "argv": [
+        "research/closure/global/verify_master_compact_constants.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/master_compact_constants_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "terminal_curvature",
+      "group": "foundational",
+      "title": "Exact terminal logarithmic curvature greater than 650",
+      "argv": [
+        "research/closure/global/verify_terminal_warp.py",
+        "--constant-m0",
+        ".135",
+        "--curvature",
+        "650"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "Standard-library rational polynomial certificate; the terminal box membership is separately checked for each exact reference.",
+      "module_dependencies": []
+    },
+    {
+      "id": "localizer_coefficients",
+      "group": "localization",
+      "title": "Ordered-242 global coefficient and coverage certificate",
+      "argv": [
+        "research/closure/global/interval_warped_hessian.py",
+        "--reference",
+        "research/closure/root/warped_cubic_ordered_reference_242.json",
+        "--S-slabs",
+        "32",
+        "--rank-slabs",
+        "3",
+        "--z-subdivisions",
+        "1",
+        "--output",
+        "research/closure/root/warped_cubic_ordered_certificate_242.json"
+      ],
+      "inputs": [
+        "research/closure/root/warped_cubic_ordered_reference_242.json"
+      ],
+      "outputs": [
+        "research/closure/root/warped_cubic_ordered_certificate_242.json"
+      ],
+      "proof_files": [],
+      "depends_on": [
+        "terminal_curvature"
+      ],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "localizer_variation",
+      "group": "localization",
+      "title": "Ordered-242 first variation, entropy absorption and retained boundary terms",
+      "argv": [
+        "research/closure/root/transport_first_variation.py",
+        "--reference",
+        "research/closure/root/warped_cubic_ordered_reference_242.json",
+        "--certificate",
+        "research/closure/root/warped_cubic_ordered_certificate_242.json",
+        "--subdivisions",
+        "2",
+        "--output",
+        "research/closure/root/transport_cubic_ordered_variation_242.json"
+      ],
+      "inputs": [
+        "research/closure/root/warped_cubic_ordered_reference_242.json",
+        "research/closure/root/warped_cubic_ordered_certificate_242.json"
+      ],
+      "outputs": [
+        "research/closure/root/transport_cubic_ordered_variation_242.json"
+      ],
+      "proof_files": [],
+      "depends_on": [
+        "localizer_coefficients"
+      ],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py",
+        "research/closure/root/flow_scalar_sensitivity.py"
+      ]
+    },
+    {
+      "id": "lower_coefficients",
+      "group": "lower_endpoint",
+      "title": "Sharp lower endpoint L=.56232844: coefficient certificate",
+      "argv": [
+        "research/closure/global/interval_warped_hessian.py",
+        "--reference",
+        "research/closure/root/warped_cubic_ordered_reference_Llower.json",
+        "--S-slabs",
+        "32",
+        "--rank-slabs",
+        "3",
+        "--z-subdivisions",
+        "1",
+        "--output",
+        "research/closure/root/warped_cubic_ordered_certificate_Llower.json"
+      ],
+      "inputs": [
+        "research/closure/root/warped_cubic_ordered_reference_Llower.json"
+      ],
+      "outputs": [
+        "research/closure/root/warped_cubic_ordered_certificate_Llower.json"
+      ],
+      "proof_files": [],
+      "depends_on": [
+        "terminal_curvature"
+      ],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "lower_violation",
+      "group": "lower_endpoint",
+      "title": "Sharp lower endpoint: positive transported-log residual excludes feasibility",
+      "argv": [
+        "research/closure/root/transport_first_variation.py",
+        "--reference",
+        "research/closure/root/warped_cubic_ordered_reference_Llower.json",
+        "--certificate",
+        "research/closure/root/warped_cubic_ordered_certificate_Llower.json",
+        "--subdivisions",
+        "2",
+        "--output",
+        "research/closure/root/transport_variation_Llower.json"
+      ],
+      "inputs": [
+        "research/closure/root/warped_cubic_ordered_reference_Llower.json",
+        "research/closure/root/warped_cubic_ordered_certificate_Llower.json"
+      ],
+      "outputs": [
+        "research/closure/root/transport_variation_Llower.json"
+      ],
+      "proof_files": [],
+      "depends_on": [
+        "lower_coefficients"
+      ],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "9.112896464894085e-7 is a transported logarithmic residual margin, not the raw objective in the same numeric units.",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py",
+        "research/closure/root/flow_scalar_sensitivity.py"
+      ]
+    },
+    {
+      "id": "selected_upper",
+      "group": "selected_upper",
+      "title": "Strict selected-family feasibility at L=.56232847",
+      "argv": [
+        "research/closure/root/selected_family_feasibility.py",
+        "--reference",
+        "research/closure/root/warped_cubic_ordered_reference_Lupper.json",
+        "--rmin",
+        ".25",
+        "--rmax",
+        ".36",
+        "--rstep",
+        ".000005",
+        "--zstep",
+        ".000002",
+        "--qstep",
+        ".000002",
+        "--output",
+        "research/closure/root/selected_family_feasibility_Lupper.json"
+      ],
+      "inputs": [
+        "research/closure/root/warped_cubic_ordered_reference_Lupper.json"
+      ],
+      "outputs": [
+        "research/closure/root/selected_family_feasibility_Lupper.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "Checks the stronger trial terminal rectangle [.775,.875]. The universally retained binary rectangle is [.84,.875]. This is not by itself the all-election upper certificate.",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "left_contact",
+      "group": "regularity",
+      "title": "Exact initial-atom arithmetic excluding c<=.2854",
+      "argv": [
+        "research/closure/core/verify_left_contact_margin.py"
+      ],
+      "inputs": [
+        "research/closure/root/transport_cubic_ordered_variation_242.json"
+      ],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [
+        "localizer_variation"
+      ],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "Only the current initial-atom/contact arithmetic is used. The script also prints a historical .18/.20 transfer check; current transfer uses .1788/.2012 and is certified by compact_constants. Optional c>.2867 sharpening is not needed.",
+      "module_dependencies": []
+    },
+    {
+      "id": "lower_diagonal_band",
+      "group": "regularity",
+      "title": "Initial diagonal invariant band on [.285,.29]",
+      "argv": [
+        "research/closure/global/verify_diagonal_slope_band.py",
+        "--r-min",
+        ".285",
+        "--r-max",
+        ".29",
+        "--output",
+        "research/closure/root/diagonal_285_29_certificate.json"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/root/diagonal_285_29_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "main_diagonal_band",
+      "group": "regularity",
+      "title": "Diagonal invariant band on [.29,.35]",
+      "argv": [
+        "research/closure/global/verify_diagonal_slope_band.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/diagonal_slope_band_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "retained_endpoints",
+      "group": "regularity",
+      "title": "Retained incoming deficit and terminal low slack constants",
+      "argv": [
+        "research/closure/global/verify_retained_endpoint_bounds.py"
+      ],
+      "inputs": [
+        "research/closure/root/transport_cubic_ordered_variation_242.json"
+      ],
+      "outputs": [
+        "research/closure/global/retained_endpoint_bounds_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [
+        "localizer_variation"
+      ],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "expanded_support",
+      "group": "regularity",
+      "title": "Current support/bootstrap: c>.2918 and .691<C<.78",
+      "argv": [
+        "research/closure/root/verify_expanded_support_bounds.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/root/expanded_support_bounds_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "tail_diagonal_band",
+      "group": "regularity",
+      "title": "Terminal diagonal slope and contact before .36",
+      "argv": [
+        "research/closure/global/verify_tail_diagonal_extension.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/tail_diagonal_extension_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "cap_contact_upper",
+      "group": "binary",
+      "title": "Last cap contact c<.305 and central binary constants",
+      "argv": [
+        "research/closure/global/verify_cap_contact_upper.py"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/verify_intermediate_low_credit.py"
+      ]
+    },
+    {
+      "id": "binary_low",
+      "group": "binary",
+      "title": "All binary inequalities through p=.65",
+      "argv": [
+        "research/closure/global/verify_structural_binary_low.py"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/verify_intermediate_low_credit.py"
+      ]
+    },
+    {
+      "id": "binary_central",
+      "group": "binary",
+      "title": "All binary inequalities on [.65,.775]",
+      "argv": [
+        "research/closure/global/verify_structural_binary_central.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/structural_binary_central_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/certify_structural_intermediate.py",
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "binary_high",
+      "group": "binary",
+      "title": "Binary on the selected high flow and strict left-contact exclusion",
+      "argv": [
+        "research/closure/core/verify_binary_high.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/core/binary_high_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "Only selected terminal tests at/after p_b>.849 are used; none below .84 are assumed.",
+      "module_dependencies": []
+    },
+    {
+      "id": "right_terminal_contact",
+      "group": "binary",
+      "title": "Interior right contact and q*<.2764",
+      "argv": [
+        "research/closure/core/verify_right_terminal_contact.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/core/right_terminal_contact_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/core/verify_binary_high.py"
+      ]
+    },
+    {
+      "id": "contact_hermite",
+      "group": "binary",
+      "title": "Coupled Hermite shape and concave joining derivative",
+      "argv": [
+        "research/closure/core/verify_binary_contact_hermite.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/core/binary_contact_hermite_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/core/verify_binary_high.py"
+      ]
+    },
+    {
+      "id": "tail_binary_constants",
+      "group": "binary",
+      "title": "Exact rank localization and tail overlap constants",
+      "argv": [
+        "research/closure/core/verify_binary_tail_constants.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/core/binary_tail_constants_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/core/verify_binary_high.py"
+      ]
+    },
+    {
+      "id": "binary_rational_tail",
+      "group": "binary",
+      "title": "Rational post-contact binary curvature comparison",
+      "argv": [
+        "research/closure/core/verify_binary_rational_tail_fast.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/core/binary_rational_tail_fast_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/core/vector_interval_jets.py",
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "tail_deficit",
+      "group": "binary",
+      "title": "Coupled normalized Hermite deficit bounds",
+      "argv": [
+        "research/closure/core/verify_tail_deficit_ratio.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/core/tail_deficit_ratio_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/core/verify_binary_contact_hermite.py",
+        "research/closure/core/verify_binary_high.py"
+      ]
+    },
+    {
+      "id": "binary_middle_tail",
+      "group": "binary",
+      "title": "Binary inequalities on [.9125,.98]",
+      "argv": [
+        "research/closure/core/verify_binary_mid_tail_fast.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/core/binary_mid_tail_fast_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/core/vector_interval_jets.py",
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "binary_near_one",
+      "group": "binary",
+      "title": "Binary inequalities for p>=.98",
+      "argv": [
+        "research/closure/global/verify_near_one_binary.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/near_one_binary_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "fixed_anchor",
+      "group": "structural_upper",
+      "title": "Coupled Hermite at an extrapolation anchor",
+      "argv": [
+        "research/closure/global/verify_fixed_anchor_terminal.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/fixed_anchor_terminal_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "scope_note": "The fixed anchor .8624 is not asserted to be the actual join.",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "hermite_cap_extension",
+      "group": "structural_upper",
+      "title": "Selected moving caps persist after the true Hermite join",
+      "argv": [
+        "research/closure/root/verify_hermite_cap_extension.py"
+      ],
+      "inputs": [
+        "research/closure/core/binary_contact_hermite_certificate.json"
+      ],
+      "outputs": [
+        "research/closure/root/hermite_cap_extension_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [
+        "contact_hermite"
+      ],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "small_layers",
+      "group": "structural_upper",
+      "title": "Exact small-layer and split-A constants",
+      "argv": [
+        "research/closure/global/verify_noncritical_small_layers.py"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "left_extension",
+      "group": "structural_upper",
+      "title": "All constraints on layers [.04,.2635]",
+      "argv": [
+        "research/closure/global/verify_structural_left_extension.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/structural_left_extension_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "critical_split",
+      "group": "structural_upper",
+      "title": "Coupled split-rank certificate on selected layers",
+      "argv": [
+        "research/closure/root/verify_critical_split_coupled.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/root/critical_split_coupled_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "right_support_local",
+      "group": "structural_upper",
+      "title": "Local supporting transport above selected layer boundary",
+      "argv": [
+        "research/closure/global/verify_right_support_transport.py",
+        "--local"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/right_support_transport_local_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "right_support_global",
+      "group": "structural_upper",
+      "title": "Global supporting transport above selected layer boundary",
+      "argv": [
+        "research/closure/global/verify_right_support_transport.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/right_support_transport_global_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "synthetic_tail",
+      "group": "structural_upper",
+      "title": "Exact synthetic-tail transport constants",
+      "argv": [
+        "research/closure/global/verify_synthetic_tail_constants.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/synthetic_tail_constants_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/verify_intermediate_low_credit.py"
+      ]
+    },
+    {
+      "id": "right_support_tail",
+      "group": "structural_upper",
+      "title": "Right-support transport through the Hermite tail",
+      "argv": [
+        "research/closure/global/verify_right_support_tail.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/right_support_tail_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py",
+        "research/closure/global/verify_right_support_transport.py",
+        "research/closure/root/verify_structural_large_hc.py",
+        "research/closure/root/verify_structural_tail_hc.py"
+      ]
+    },
+    {
+      "id": "intermediate_li_hi",
+      "group": "structural_upper",
+      "title": "Exact LI/HI constants on [L,.65]",
+      "argv": [
+        "research/closure/global/verify_intermediate_low_credit.py"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "intermediate_hc",
+      "group": "structural_upper",
+      "title": "HC on [L,.65], high ranks through .875",
+      "argv": [
+        "research/closure/global/certify_structural_intermediate.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/structural_intermediate_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "zero_credit",
+      "group": "structural_upper",
+      "title": "Exact zero-credit price bridge [.65,.88]",
+      "argv": [
+        "research/closure/root/verify_zero_credit_price.py"
+      ],
+      "inputs": [],
+      "outputs": [],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": []
+    },
+    {
+      "id": "large_hc",
+      "group": "structural_upper",
+      "title": "Structural large-mass HC through high rank .875",
+      "argv": [
+        "research/closure/root/verify_structural_large_hc.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/root/structural_large_hc_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    },
+    {
+      "id": "tail_large_hc",
+      "group": "structural_upper",
+      "title": "Structural Hermite HC for large masses",
+      "argv": [
+        "research/closure/root/verify_structural_tail_hc.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/root/structural_tail_hc_large_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py",
+        "research/closure/root/verify_structural_large_hc.py"
+      ]
+    },
+    {
+      "id": "tail_intermediate_hc",
+      "group": "structural_upper",
+      "title": "Structural Hermite HC for intermediate masses",
+      "argv": [
+        "research/closure/root/verify_structural_tail_hc.py",
+        "--intermediate",
+        "--max-boxes",
+        "7000000"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/root/structural_tail_hc_intermediate_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/interval_warped_hessian.py",
+        "research/closure/root/verify_structural_large_hc.py"
+      ]
+    },
+    {
+      "id": "long_credit",
+      "group": "structural_upper",
+      "title": "Positive-credit long-secant LI for p>=.88",
+      "argv": [
+        "research/closure/global/verify_structural_long_credit.py"
+      ],
+      "inputs": [],
+      "outputs": [
+        "research/closure/global/structural_long_credit_certificate.json"
+      ],
+      "proof_files": [],
+      "depends_on": [],
+      "prior_status": "passed; retained accepted certificate or exact assertions",
+      "module_dependencies": [
+        "research/closure/global/certify_structural_intermediate.py",
+        "research/closure/global/interval_warped_hessian.py"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "research/closure/core/binary_contact_hermite_certificate.json",
+      "roles": [
+        "accepted_output",
+        "certificate_input"
+      ],
+      "sha256": "c5c9c825a2a0ce6e5cd20b42591221376aa817635e1350ad3f1607cb9052478d",
+      "bytes": 8346
+    },
+    {
+      "path": "research/closure/core/binary_high_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "e567490f2df3e441d562b8654aa5721e16b6e0b557c97518efabb72815e89455",
+      "bytes": 3217
+    },
+    {
+      "path": "research/closure/core/binary_mid_tail_fast_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "e192d34f4bb4909dee6000a5945d070f6f4952d950caf5a7639f82ea7cebb39a",
+      "bytes": 512
+    },
+    {
+      "path": "research/closure/core/binary_rational_tail_fast_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "00b1384575a7551efc48db477e29fa4cbc6532f5508cda42bf58dc09017bcbb1",
+      "bytes": 505
+    },
+    {
+      "path": "research/closure/core/binary_tail_constants_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "a3330f4d53650a2101cabafe75030bc40169f755f176047124287017b5c1edc4",
+      "bytes": 1223
+    },
+    {
+      "path": "research/closure/core/right_terminal_contact_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "efd0ab2ce7282d7d5ffaaf30875e8e4707173a5d23b7059a6529b016d24c7341",
+      "bytes": 2305
+    },
+    {
+      "path": "research/closure/core/tail_deficit_ratio_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "a925e4a688f87e1750c3f49264650885c4e4bb082de2753838669e6f682d893b",
+      "bytes": 4388
+    },
+    {
+      "path": "research/closure/core/vector_interval_jets.py",
+      "roles": [
+        "python_dependency"
+      ],
+      "sha256": "8701256d1def5d991f3e5ceb4650a50971703279bd299fd9cc49911df4a29481",
+      "bytes": 1674
+    },
+    {
+      "path": "research/closure/core/verify_binary_contact_hermite.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "84612c846dff5ca7148e90239629a5254aa1af4028fc4b6176095595fb9d94f5",
+      "bytes": 1433
+    },
+    {
+      "path": "research/closure/core/verify_binary_high.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "082c63dbfe367986c607710d2aed1990b4799b7d8aad7a2402c725b36adcdb5b",
+      "bytes": 7402
+    },
+    {
+      "path": "research/closure/core/verify_binary_mid_tail_fast.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "d9b451fce828c2f7de2a5d47300402f3242485a54ad1aefb6c4961d3957a42d0",
+      "bytes": 3928
+    },
+    {
+      "path": "research/closure/core/verify_binary_rational_tail_fast.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "5c313568271c99b04501f067ceb69792579be77f3e50004b01815f61d5c986b0",
+      "bytes": 2971
+    },
+    {
+      "path": "research/closure/core/verify_binary_tail_constants.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "9fb515609e92edb56faa6ded995b4a09b950696cfbeb71c47b7eaf35818bebd4",
+      "bytes": 1322
+    },
+    {
+      "path": "research/closure/core/verify_left_contact_margin.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "086aa67079a32db5caa81fd2ceee2ddc2c76db5a55241f321884de6a5fca1a02",
+      "bytes": 2230
+    },
+    {
+      "path": "research/closure/core/verify_right_terminal_contact.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "03fe10f1fb7828367bdf930b5e3ecc61447a60fdb4fe4cb6cfbfc759a5ff54dc",
+      "bytes": 4090
+    },
+    {
+      "path": "research/closure/core/verify_tail_deficit_ratio.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "bdbe21dd6a65f91c4fad7e783c893c2597a017b0e1c56943d8ae987c00868411",
+      "bytes": 1019
+    },
+    {
+      "path": "research/closure/global/certify_structural_intermediate.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "b0464d855efa70c93fc4216773f868b177c516561639cc9ac3e4220219fb8bd9",
+      "bytes": 7908
+    },
+    {
+      "path": "research/closure/global/diagonal_slope_band_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "3e8a41ddadd550016dfb555e0b318799f2f9c3e44172422f577ce71ee3eda059",
+      "bytes": 475
+    },
+    {
+      "path": "research/closure/global/fixed_anchor_terminal_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "74d6bc115d3d004498f2a8ed7351c93938277d9a6e2e39d79c12f6f41ee4acf4",
+      "bytes": 1129
+    },
+    {
+      "path": "research/closure/global/interval_warped_hessian.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "16d7d3dc06a025c9b99e0c986f2efb683d4da9776554f7151e9a2741e21daa0d",
+      "bytes": 25968
+    },
+    {
+      "path": "research/closure/global/layer_extension_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "ed3dcbe405be07662be0f869926804bbde7c0a6ff8252f6df52130abc4fe98f8",
+      "bytes": 1039
+    },
+    {
+      "path": "research/closure/global/master_compact_constants_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "296193210362978d5f2c98650c1f7e5c9896445993c41c93ac889efe71de3191",
+      "bytes": 569
+    },
+    {
+      "path": "research/closure/global/near_one_binary_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "f3d2148095802a73995e008632640100f51456a0de8ed21adbcbff5625190501",
+      "bytes": 513
+    },
+    {
+      "path": "research/closure/global/retained_endpoint_bounds_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "bb40f30411472c808bf2a7678a2aa13b05ccd74017ebe713316835955154ae21",
+      "bytes": 715
+    },
+    {
+      "path": "research/closure/global/right_support_tail_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "b5538c21c6c11d4213afcf2a9579a06394b76c168229f4181a4206c607be827b",
+      "bytes": 559
+    },
+    {
+      "path": "research/closure/global/right_support_transport_global_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "c6c3884749370c26d98d16b927f6184d50a7334237f47eb031bb3b1474a1ab4b",
+      "bytes": 423
+    },
+    {
+      "path": "research/closure/global/right_support_transport_local_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "b684c3d6f5ef484094b21aba549d07262017382be7819e48b46fb42b8c29b0a0",
+      "bytes": 415
+    },
+    {
+      "path": "research/closure/global/structural_binary_central_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "d08af9a287d890654706a3201fd4e28862642cc76919904c275929416f2260fe",
+      "bytes": 453
+    },
+    {
+      "path": "research/closure/global/structural_intermediate_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "2d7d20869e69f4ac2f58dcee15322f05fc423f71cf157a4d745f69e3a7644ace",
+      "bytes": 670
+    },
+    {
+      "path": "research/closure/global/structural_left_extension_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "88950004c77d3f605a7b67a5880262c084f58e97be7d428d8c1164decdb3ec6d",
+      "bytes": 1295
+    },
+    {
+      "path": "research/closure/global/structural_long_credit_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "b1b813182b0c03e16b7c77658bc8bacea3decf1dceb4f2f9d7de03f12bbae967",
+      "bytes": 414
+    },
+    {
+      "path": "research/closure/global/synthetic_tail_constants_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "fcf2649e4eb4cfdd1eef7857c2a4cb8d5911e2aa0c5c20978cc887a37a6f1080",
+      "bytes": 396
+    },
+    {
+      "path": "research/closure/global/tail_diagonal_extension_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "39ceadc741d7a8f5fbddef81b2f9725f3b097a667f22b5f662436c3ba0c234fc",
+      "bytes": 483
+    },
+    {
+      "path": "research/closure/global/verify_cap_contact_upper.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "1c377137cb3693897e432617768436bd349104eaee9f7698254ca0013294b1e7",
+      "bytes": 1828
+    },
+    {
+      "path": "research/closure/global/verify_diagonal_slope_band.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "a0e76837b0dd9d6d545220fc68be68e6337bbd4d5d23af59b17221c2f0c9f14d",
+      "bytes": 4164
+    },
+    {
+      "path": "research/closure/global/verify_fixed_anchor_terminal.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "8fe23d471177fc8d13280d46557e1bc76b09e593a284e9daff4442ccca8247cf",
+      "bytes": 4453
+    },
+    {
+      "path": "research/closure/global/verify_intermediate_low_credit.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "f7be784fb11cacb3c485c4623be79c19ffbda18874313f430355cb68a0163fe1",
+      "bytes": 1681
+    },
+    {
+      "path": "research/closure/global/verify_layer_extension.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "2ee514ac257639fe0ce13ba6b897e559a3d42f2cfaa09420ab34207381246720",
+      "bytes": 5670
+    },
+    {
+      "path": "research/closure/global/verify_master_compact_constants.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "adaf4c0a3c747159c95ea17856eab5d9fa1b92f3630586139930c02c56fe888f",
+      "bytes": 4185
+    },
+    {
+      "path": "research/closure/global/verify_near_one_binary.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "93026b94b35b8c87dd779d5491b66db992f65dda4ec0cbe24706a02086bf74aa",
+      "bytes": 3446
+    },
+    {
+      "path": "research/closure/global/verify_noncritical_small_layers.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "ec499c73fdbd0c67fddc163b5e52dcb34b9748ff5e6469021e32e1669e058a9a",
+      "bytes": 3092
+    },
+    {
+      "path": "research/closure/global/verify_retained_endpoint_bounds.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "8b8c89027a3adf0cb3721913c0e85db6f7c8f819e92dd85a9189098f4fac6875",
+      "bytes": 3571
+    },
+    {
+      "path": "research/closure/global/verify_right_support_tail.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "bb7555928eae8b1ee39fcae4479cd8b15a40984b1c9dbb6a46eed52b9f1ad7e8",
+      "bytes": 5081
+    },
+    {
+      "path": "research/closure/global/verify_right_support_transport.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "e6b4b2bac38b085d2ae97e20f62c975859ca41fc06c7d1eb24328107d12cfca6",
+      "bytes": 5672
+    },
+    {
+      "path": "research/closure/global/verify_structural_binary_central.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "c9f6de8288902ac2b71463edd333cd25183b656f93371631d9703553cf9c96cc",
+      "bytes": 3488
+    },
+    {
+      "path": "research/closure/global/verify_structural_binary_low.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "4dd8487d7ef2a8ec24bfa132f87b1c9fec791eff8a66715a65a85170ab9a0417",
+      "bytes": 1423
+    },
+    {
+      "path": "research/closure/global/verify_structural_left_extension.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "5493b243cf2af90faa2052452ac74693335349fbe4a951ea22cc1022cb941f9b",
+      "bytes": 4351
+    },
+    {
+      "path": "research/closure/global/verify_structural_long_credit.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "3629e24ea027b3342c229f929a2d1a0b4d62672bb8a87b882dcc4e8f7f0b18b7",
+      "bytes": 3222
+    },
+    {
+      "path": "research/closure/global/verify_synthetic_tail_constants.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "e0fce39820a08ff2665656fc11c0ddae273e972beae333233502bba347d93cbd",
+      "bytes": 1565
+    },
+    {
+      "path": "research/closure/global/verify_tail_diagonal_extension.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "09400fbf69002d34fccf576908615edf2eae66f6d2091ffcc93a3c1af8c9a954",
+      "bytes": 3412
+    },
+    {
+      "path": "research/closure/global/verify_terminal_warp.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "8d3c95668736d5713de4ed6f844da70e8dc96f0ecdde0710ae3ed7739f9b4fc0",
+      "bytes": 3579
+    },
+    {
+      "path": "research/closure/lower/certified_base_labels.json",
+      "roles": [
+        "certificate_input"
+      ],
+      "sha256": "68a10da731ddded835147768e9af1f6f9bc5eddc20bd0cbe0665a839d909b213",
+      "bytes": 823306
+    },
+    {
+      "path": "research/closure/lower/exact_dual.py",
+      "roles": [
+        "python_dependency"
+      ],
+      "sha256": "13120ba84159e1b91912f1c644ed8617f091821d85c65f71e92a1293e20b5fc8",
+      "bytes": 4783
+    },
+    {
+      "path": "research/closure/lower/full_central_certificate.json",
+      "roles": [
+        "certificate_input"
+      ],
+      "sha256": "19eca36647d225d4e189fcc4c351826df17e237baeab0f16edc617f9aa4e463b",
+      "bytes": 7305
+    },
+    {
+      "path": "research/closure/lower/localization200.json",
+      "roles": [
+        "certificate_input"
+      ],
+      "sha256": "3d518d48de5eae65e4b22da4fec6423be230b59f3174f229006df0417c3f63eb",
+      "bytes": 716352
+    },
+    {
+      "path": "research/closure/lower/uniform_envelope_certificates.json",
+      "roles": [
+        "certificate_input"
+      ],
+      "sha256": "9f5adb88136e1a0f71c6e98c1675073f835db5b373746674ac35fd91c59b6165",
+      "bytes": 32160
+    },
+    {
+      "path": "research/closure/lower/verify_global_constants.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "d6ebcbd9be488adeeb3542ecd0b2ffc8f5858f2583494a69e7f585b36cc7f7a5",
+      "bytes": 2889
+    },
+    {
+      "path": "research/closure/root/critical_split_coupled_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "8036a2fffd136587bc7d2d7a4da56663503a423bcfa438733b20ce59e69375ce",
+      "bytes": 618
+    },
+    {
+      "path": "research/closure/root/diagonal_285_29_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "ba44555816f8073d54edee7963d5fbfbb563dde82d1038114a0ad349d3d77fd0",
+      "bytes": 467
+    },
+    {
+      "path": "research/closure/root/expanded_support_bounds_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "1b227038f17e9c2fca49351fdf5db01c337fcdb74bad81b5236dd63342d12369",
+      "bytes": 988
+    },
+    {
+      "path": "research/closure/root/flow_scalar_sensitivity.py",
+      "roles": [
+        "python_dependency"
+      ],
+      "sha256": "ee88b4bed164bb415cf76ae82ebcdfc03e4c29ffb6561a84b3df11a02fcf64be",
+      "bytes": 14501
+    },
+    {
+      "path": "research/closure/root/hermite_cap_extension_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "5455c95734e69e0ed1cb01fd47ecf7fc55508f81ff8cd4fdd68c96fe5690c219",
+      "bytes": 1201
+    },
+    {
+      "path": "research/closure/root/selected_family_feasibility.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "ba5cab10dea019cbec6f1ba04626579a3da80857034f82e253b4ae99cbe368cd",
+      "bytes": 19095
+    },
+    {
+      "path": "research/closure/root/selected_family_feasibility_Lupper.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "4aadca9c5423c179c6d97ff0cf97a10df290a8b059d53aa02dbd0fe3f450abc7",
+      "bytes": 7536
+    },
+    {
+      "path": "research/closure/root/structural_large_hc_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "bf98034b9479196944c69bcdb1aa468c22bb527c06474d3ab4b058cdef38e0e3",
+      "bytes": 578
+    },
+    {
+      "path": "research/closure/root/structural_tail_hc_intermediate_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "63ca3b365901b45d509504a223844b61096e2014aac4ab4264c3a01559344178",
+      "bytes": 838
+    },
+    {
+      "path": "research/closure/root/structural_tail_hc_large_certificate.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "9753fe4311aebc1841c4e790c39a0283f6ad3ee5c2b7bfa7bdc43963e8f3d9c4",
+      "bytes": 834
+    },
+    {
+      "path": "research/closure/root/transport_cubic_ordered_variation_242.json",
+      "roles": [
+        "accepted_output",
+        "certificate_input"
+      ],
+      "sha256": "b523726c4bcc657d3f6edc9417756d1a073e9c39ae21bf04d934803009e60bdb",
+      "bytes": 2537
+    },
+    {
+      "path": "research/closure/root/transport_first_variation.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "95dee470e454d909536d4cb6810ea147cad537bcee812a77894d62c8fc2164e4",
+      "bytes": 9482
+    },
+    {
+      "path": "research/closure/root/transport_variation_Llower.json",
+      "roles": [
+        "accepted_output"
+      ],
+      "sha256": "ed87e76bd04e15d505d298a1d57dd41f587ae34fddb79ff43af0c0d2d3ede8fa",
+      "bytes": 2601
+    },
+    {
+      "path": "research/closure/root/verify_critical_split_coupled.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "b4b98f44beb40526a5392c653e015fa3a3f0743f28ad1804f8e246c9fe2ccac5",
+      "bytes": 2867
+    },
+    {
+      "path": "research/closure/root/verify_expanded_support_bounds.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "4634c912014d1ff68838ebbdc953bf2c94f603c6fa1b4645dd400d39ef0fce56",
+      "bytes": 3459
+    },
+    {
+      "path": "research/closure/root/verify_hermite_cap_extension.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "fca33fed3b26086a8ef569f2d5414b90a9d6b665738de05c46608964cd11c31c",
+      "bytes": 1548
+    },
+    {
+      "path": "research/closure/root/verify_structural_large_hc.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "092373dfacf4078457c47d0913b83c9664b56715c9a61387a571894394274deb",
+      "bytes": 7066
+    },
+    {
+      "path": "research/closure/root/verify_structural_tail_hc.py",
+      "roles": [
+        "checker",
+        "python_dependency"
+      ],
+      "sha256": "171a9f99b3c1e64e25a4ee125b6c8ca94d36fbdfd5c716c2a7be457e7334ff8a",
+      "bytes": 8769
+    },
+    {
+      "path": "research/closure/root/verify_weighted_slater.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "558563dd7ef6a99f8791053467c2e7bec03c9148d769da2af2cb8661341c36fa",
+      "bytes": 2235
+    },
+    {
+      "path": "research/closure/root/verify_zero_credit_price.py",
+      "roles": [
+        "checker"
+      ],
+      "sha256": "65f49a9a68f1817d259fa35e9e50ab6d06548347d51f281b3ee988822db09aab",
+      "bytes": 2225
+    },
+    {
+      "path": "research/closure/root/warped_cubic_ordered_certificate_242.json",
+      "roles": [
+        "accepted_output",
+        "certificate_input"
+      ],
+      "sha256": "88856c20ff728ec7845a303a821276e486997d5c44fdb58ad0c860ed3dc70982",
+      "bytes": 420728
+    },
+    {
+      "path": "research/closure/root/warped_cubic_ordered_certificate_Llower.json",
+      "roles": [
+        "accepted_output",
+        "certificate_input"
+      ],
+      "sha256": "519045f8df823002c318b266bbc4498c78290238e4dcfb497af997cf5ff0307c",
+      "bytes": 420709
+    },
+    {
+      "path": "research/closure/root/warped_cubic_ordered_reference_242.json",
+      "roles": [
+        "certificate_input"
+      ],
+      "sha256": "253035928292d8b09f222ee01375285e8a49f56f2cd6fbc74d719580b2566e53",
+      "bytes": 170990
+    },
+    {
+      "path": "research/closure/root/warped_cubic_ordered_reference_Llower.json",
+      "roles": [
+        "certificate_input"
+      ],
+      "sha256": "b35efa965086e7bd77c8d8d56ca624c891c58a4e84969276594079884cf9a406",
+      "bytes": 170810
+    },
+    {
+      "path": "research/closure/root/warped_cubic_ordered_reference_Lupper.json",
+      "roles": [
+        "certificate_input"
+      ],
+      "sha256": "dc87a27d6f6a24b4b834c87aff0095c1648a97f836f94882a34aa268a33068f7",
+      "bytes": 170825
+    },
+    {
+      "path": "research/closure/simplified/replay_certificates.py",
+      "roles": [
+        "replay_runner"
+      ],
+      "sha256": "bf2aa6c1869e090cc347fdfc852263d07df76f096d4ddd4b98f010099334eb1b",
+      "bytes": 9008
+    }
+  ],
+  "definitive_proof_sources": [],
+  "proof_scope_notes": [
+    "The main text proves the algebraic and variational implications; Appendix D contains all numerical verification.",
+    "The selected upper trial proves nonemptiness, while the matching all-election upper uses an actual critical minimizer.",
+    "The source uses lambda,J,phi where the unchanged numerical checkers use L,F,phi.",
+    "Arithmetic outputs and exact reference data are unchanged from the accepted verification; historical narrative proof files are omitted."
+  ],
+  "pending_delivery_files": []
+}

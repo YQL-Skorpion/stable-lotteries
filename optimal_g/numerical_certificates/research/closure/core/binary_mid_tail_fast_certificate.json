@@ -1,0 +1,29 @@
+{
+  "status": "mid tail binary interval certificate passed",
+  "arithmetic": "outward nextafter arithmetic and first-order interval mean-value intersections",
+  "L": [
+    ".562325",
+    ".562330"
+  ],
+  "S": [
+    ".02271790",
+    ".023354"
+  ],
+  "c": [
+    ".2918",
+    ".305"
+  ],
+  "q": [
+    ".2918",
+    ".337"
+  ],
+  "h": [
+    ".02",
+    ".0875"
+  ],
+  "leaves": 283258,
+  "infeasible_boxes": 10813,
+  "visited": 588141,
+  "normalized_gap_lower": 2.898678768802759e-08,
+  "seconds": 5.954801321029663
+}
